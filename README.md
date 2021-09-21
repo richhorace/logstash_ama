@@ -74,6 +74,12 @@ Additional docker resources:<br>
 
 This walkthrough will be driven by multiple logstash pipelines with examples of different configurations that will be enabled by uncommenting and commenting in the `elastic-stack/config/logstash/pipelines.yml` <br>
 
+To see the results have the logstash container running in the foreground. <br>
+```
+docker-compose -f docker-compose-ingest.yml up logstash
+
+```
+
 Each pipeline example will build on previous example, but can also be run by itself.
 - `logstash-main.conf`: bare config mininum to run logstash without errors. <br>
 - `1-generate-example`: Introduces the [Generator Input Plugin](https://www.elastic.co/guide/en/logstash/current/plugins-inputs-generator.html) which allows to pass message directly into input with count of events to produce. This is great for isolating testing to specific message for debugging. <br>
@@ -83,6 +89,14 @@ Each pipeline example will build on previous example, but can also be run by its
 -- 100-input.conf <br>
 -- 500-filter.conf <br>
 -- 900-output.conf <br>
-- `5-output-es`: Pulls it all together with multiple file inputs, conditional filtering and outputing to multiple indices using [Elasticsearch Output Plugin](https://www.elastic.co/guide/en/logstash/current/plugins-outputs-elasticsearch.html)
+- `5-output-es`: Pulls it all together with multiple file inputs, conditional filtering and outputing to multiple indices using [Elasticsearch Output Plugin](https://www.elastic.co/guide/en/logstash/current/plugins-outputs-elasticsearch.html) <br>
+
+Run all three container for 5-output-es
+```
+
+docker-compose -f docker-compose-ingest.yml up 
+
+```
+Access Kibana [localhost:5601](http://localhost:5601/app/home#/)
 
 ## Thanks a wrap!
