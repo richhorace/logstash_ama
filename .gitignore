@@ -25,3 +25,9 @@ docs/_build/
 
 # pyenv
 .python-version
+
+# Steps.md
+steps.md
+
+# VSCode
+.vscode/

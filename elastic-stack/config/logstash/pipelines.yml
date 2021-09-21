@@ -1,0 +1,16 @@
+# This file is where you define your pipelines. You can define multiple.
+# For more information on multiple pipelines, see the documentation:
+#   https://www.elastic.co/guide/en/logstash/current/multiple-pipelines.html
+
+- pipeline.id: main
+  path.config: "/usr/share/logstash/pipeline/logstash-main.conf"
+# - pipeline.id: 1-generate-example
+#   path.config: "/usr/share/logstash/pipeline/1-generate-example"    
+# - pipeline.id: 2-dissect-example
+#   path.config: "/usr/share/logstash/pipeline/2-dissect-example"  
+# - pipeline.id: 3-more-complicated-example
+#   path.config: "/usr/share/logstash/pipeline/3-more-complicated-example"  
+# - pipeline.id: 4-multiple-config-example
+#   path.config: "/usr/share/logstash/pipeline/4-multiple-config-example" 
+# - pipeline.id: 5-output-es
+#   path.config: "/usr/share/logstash/pipeline/5-output-es"   

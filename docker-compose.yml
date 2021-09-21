@@ -5,7 +5,7 @@ services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:${ELASTIC_VERSION}
     environment:
-      - cluster.name=docker-elastic
+      - cluster.name=${ELASTIC_CLUSTER_NAME}
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - "discovery.type=single-node"
     ulimits:
